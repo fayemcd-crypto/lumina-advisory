@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Lumina</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --forest: #004225;
+    --forest-deep: #002D19;
+    --gold: #C9A84C;
+    --cream: #F5F0E6;
+    --white: #FFFFFF;
+    --muted: #4A6655;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest-deep); min-height: 100vh; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--forest-deep); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
+  .logo span { font-style: italic; color: var(--gold); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul li a { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+  nav ul li a:hover { color: var(--white); }
+  .page-hero { background: var(--forest); padding: 6rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.1); }
+  .page-hero::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 250px; height: 250px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.15); }
+  .page-hero-left { position: relative; z-index: 1; }
+  .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 400; }
+  .page-headline { font-family: 'Cormorant Garamond', serif; font-size: 3.4rem; font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 2rem; }
+  .page-headline em { font-style: italic; color: var(--gold); }
+  .page-intro { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 420px; }
+  .photo-block { position: relative; z-index: 1; }
+  .photo-placeholder { width: 100%; aspect-ratio: 3/4; background: rgba(255,255,255,0.05); border: 0.5px solid rgba(201,168,76,0.2); display: flex; align-items: center; justify-content: center; max-width: 340px; margin: 0 auto; }
+  .photo-placeholder-inner { text-align: center; }
+  .photo-placeholder-inner p { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); font-weight: 400; margin-top: 1rem; }
+  .photo-placeholder-inner svg { width: 48px; height: 48px; stroke: rgba(255,255,255,0.15); fill: none; stroke-width: 0.8; }
+  .story-section { padding: 6rem 3rem; background: var(--white); }
+  .story-inner { max-width: 760px; margin: 0 auto; }
+  .story-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 400; }
+  .story-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 2.5rem; line-height: 1.2; }
+  .story-heading em { font-style: italic; }
+  .story-body { font-size: 0.95rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: 1.75rem; }
+  .story-body strong { font-weight: 500; color: var(--forest-deep); }
+  .story-pull { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; font-style: italic; color: var(--forest); line-height: 1.5; border-left: 2px solid var(--gold); padding-left: 2rem; margin: 3rem 0; }
+  .mission-strip { background: var(--forest-deep); padding: 5rem 3rem; }
+  .mission-inner { max-width: 860px; margin: 0 auto; }
+  .mission-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 400; text-align: center; }
+  .mission-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--white); text-align: center; margin-bottom: 4rem; line-height: 1.4; }
+  .mission-heading em { font-style: italic; color: var(--gold); }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .value-item { border-top: 0.5px solid rgba(201,168,76,0.3); padding-top: 1.5rem; }
+  .value-number { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; font-style: italic; color: var(--gold); opacity: 0.5; line-height: 1; margin-bottom: 0.75rem; }
+  .value-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--white); margin-bottom: 0.75rem; }
+  .value-desc { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.45); font-weight: 300; }
+  .about-cta { background: var(--cream); padding: 5rem 3rem; text-align: center; }
+  .about-cta-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1rem; }
+  .about-cta-heading em { font-style: italic; color: var(--forest); }
+  .about-cta-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
+  .btn-primary { background: var(--forest); color: var(--white); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; margin: 0 0.5rem; }
+  .btn-ghost-dark { background: transparent; color: var(--forest); border: 0.5px solid rgba(0,66,37,0.3); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; margin: 0 0.5rem; }
+  .footer-bar { padding: 2rem 3rem; background: var(--forest-deep); border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+  .footer-logo span { font-style: italic; color: var(--gold); }
+  .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 300; }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .page-hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .page-headline { font-size: 2.4rem; }
+    .photo-block { display: none; }
+    .story-section { padding: 3rem 1.5rem; }
+    .mission-strip { padding: 3rem 1.5rem; }
+    .values-grid { grid-template-columns: 1fr; }
+    .about-cta { padding: 3rem 1.5rem; }
+    .footer-bar { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">lumi<span>na</span></a>
+  <ul>
+    <li><a href="index.html#framework">Our work</a></li>
+    <li><a href="approach.html">Our approach</a></li>
+    <li><a href="advisory.html">For organisations</a></li>
+    <li><a href="collective.html">For individuals</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-left">
+    <p class="page-eyebrow">The founder</p>
+    <h1 class="page-headline">Built from<br>experience.<br><em>Driven by<br>integrity.</em></h1>
+    <p class="page-intro">Lumina wasn't born in a boardroom or a business school. It was forged in the moments when speaking the truth for transformation cost something — and the clarity that followed changed everything.</p>
+  </div>
+  <div class="photo-block">
+    <div class="photo-placeholder">
+      <div class="photo-placeholder-inner">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <p>Photo coming soon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="story-inner">
+    <p class="story-label">Faye's story</p>
+    <h2 class="story-heading">From the inside<br><em>of the resistance</em></h2>
+    <p class="story-body">I spent over a decade building and leading analytics and business intelligence functions inside some of the world's most complex global organisations. I was good at it. I understood data, I understood people, and I understood how to translate between the two.</p>
+    <p class="story-body">But the higher I rose, the more clearly I could see something that most organisations work hard not to name. <strong>The gap between what leaders say they stand for and what they actually do.</strong> Between the transformation programmes that get funded and the change that never truly lands. Between the culture that exists on paper and the one that plays out in the room.</p>
+    <p class="story-body">I witnessed what happens when power distorts truth. When the wrong people rise because they're confident, not competent. When systems are designed — often unconsciously — to protect themselves rather than the people inside them. And I made the choice that many people in those moments don't: I spoke up.</p>
+    <div class="story-pull">"Speaking the truth for transformation cost me something. But it also gave me something I couldn't have found any other way — absolute clarity about what I believe, and why it matters."</div>
+    <p class="story-body">What followed was a period of deep reflection. I returned to my roots in behavioural economics — my PhD had always given me a framework for understanding why people resist change even when they know it's necessary. I trained as a coach. And I started to see that the problem organisations face isn't strategy, or technology, or even culture in the abstract.</p>
+    <p class="story-body"><strong>The problem is resistance.</strong> And resistance is human. It lives in the systems we build, the power structures we protect, the decisions we make under pressure, and the very nervous systems of the people we ask to lead through uncertainty.</p>
+    <p class="story-body">Lumina exists because I've been on the inside of that resistance — and I know what it takes to illuminate it, face it, and transform through it. Not around it. Through it.</p>
+    <p class="story-body">That's humanised leadership. And it's the only kind that actually works.</p>
+  </div>
+</section>
+
+<section class="mission-strip">
+  <div class="mission-inner">
+    <p class="mission-label">What we stand for</p>
+    <h2 class="mission-heading">To humanise transformation.<br><em>To seek the truth of resistance.</em><br>To lead with integrity.</h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-number">01</div>
+        <div class="value-title">Humanised transformation</div>
+        <div class="value-desc">Real change doesn't happen to people — it happens through them. We put the human at the centre of every transformation, because that's the only place it can truly begin.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">02</div>
+        <div class="value-title">To seek the truth of resistance</div>
+        <div class="value-desc">Resistance isn't the enemy of change — it's the map. We illuminate where it lives, what drives it, and what it takes to move through it with clarity and courage.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">03</div>
+        <div class="value-title">To lead with integrity</div>
+        <div class="value-desc">Integrity isn't a value you put on a wall. It's a daily practice — in the decisions you make, the truth you tell, and the culture you build around you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <h2 class="about-cta-heading">Ready to shine a light<br><em>on what's possible?</em></h2>
+  <p class="about-cta-sub">Whether you're leading an organisation through change or navigating your own leadership journey — let's talk.</p>
+  <a class="btn-primary" href="contact.html">Get in touch</a>
+  <a class="btn-ghost-dark" href="approach.html">Our approach</a>
+</section>
+
+<footer class="footer-bar">
+  <a class="footer-logo" href="index.html">lumi<span>na</span></a>
+  <div class="footer-tagline">Humanised transformation and change.</div>
+</footer>
+
+</body>
+</html>
