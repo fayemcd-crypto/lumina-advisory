@@ -16,15 +16,15 @@
     --muted: #4A6655;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest-deep); min-height: 100vh; }
-
+ 
   /* NAV */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--forest-deep); }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
   .logo span { font-style: italic; color: var(--gold); }
   nav ul { display: flex; gap: 2rem; list-style: none; }
   nav ul li a { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 400; transition: color 0.2s; }
   nav ul li a:hover { color: var(--white); }
-
+ 
   /* HERO */
   .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; }
   .hero-left { background: var(--forest); padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
@@ -35,8 +35,8 @@
   .hero-headline em { font-style: italic; color: var(--gold); }
   .hero-body { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 400px; margin-bottom: 3rem; font-weight: 300; position: relative; z-index: 1; }
   .hero-cta-row { display: flex; gap: 1rem; align-items: center; position: relative; z-index: 1; }
-  .btn-primary { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; }
-  .btn-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; }
+  .btn-primary { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; }
   .hero-right { background: var(--cream); display: flex; align-items: center; justify-content: center; padding: 4rem 3rem; position: relative; }
   .quote-ring { position: absolute; border-radius: 50%; border: 0.5px solid rgba(0,66,37,0.12); top: 50%; left: 50%; transform: translate(-50%,-50%); }
   .ring-1 { width: 260px; height: 260px; }
@@ -46,9 +46,9 @@
   .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 0.6; color: var(--gold); opacity: 0.4; margin-bottom: 0.5rem; display: block; }
   .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--forest); }
   .hero-quote cite { display: block; margin-top: 1.5rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-style: normal; font-family: 'DM Sans', sans-serif; }
-
+ 
   /* PATHS */
-  .paths-section { padding: 6rem 3rem; text-align: center; background: var(--white); }
+  .paths-section { padding: 6rem 3rem; text-align: center; background: var(--white); scroll-margin-top: 80px; }
   .section-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
   .section-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1rem; line-height: 1.2; }
   .section-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 520px; margin: 0 auto 4rem; font-weight: 300; }
@@ -75,20 +75,24 @@
   .path-link { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding-bottom: 2px; font-weight: 400; }
   .path-card:first-child .path-link { color: var(--gold); border-bottom: 0.5px solid var(--gold); }
   .path-card:last-child .path-link { color: var(--forest); border-bottom: 0.5px solid var(--forest); }
-
+ 
   /* FRAMEWORK */
-  .framework-strip { background: var(--forest-deep); padding: 4.5rem 3rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; border-top: 1px solid rgba(201,168,76,0.2); }
+  .framework-section { background: var(--forest-deep); border-top: 1px solid rgba(201,168,76,0.2); scroll-margin-top: 80px; }
+  .framework-header { padding: 3rem 3rem 0; text-align: center; }
+  .framework-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; font-weight: 400; }
+  .framework-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--white); font-style: italic; }
+  .framework-strip { padding: 3rem 3rem 4.5rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
   .fw-number { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 0.75rem; opacity: 0.6; }
   .fw-label { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.6rem; font-weight: 400; }
   .fw-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
   .fw-desc { font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); font-weight: 300; }
-
+ 
   /* FOOTER */
   .footer-bar { padding: 2rem 3rem; background: var(--forest-deep); border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
   .footer-logo span { font-style: italic; color: var(--gold); }
   .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 300; }
-
+ 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -106,26 +110,27 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
-  <div class="logo">lumi<span>na</span></div>
+  <a class="logo" href="index.html">lumi<span>na</span></a>
   <ul>
-    <li><a href="#">Our work</a></li>
-    <li><a href="#">For organisations</a></li>
-    <li><a href="#">For individuals</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#framework">Our work</a></li>
+    <li><a href="approach.html">Our approach</a></li>
+    <li><a href="advisory.html">For organisations</a></li>
+    <li><a href="collective.html">For individuals</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <section class="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">Humanised transformation and change</p>
     <h1 class="hero-headline">When people<br>transform,<br><em>the world<br>transforms</em><br>with them.</h1>
     <p class="hero-body">Lumina exists to close the gap between intention and action — the adoption gap — by working with organisations and individuals to build the leadership clarity, decision integrity, and change readiness needed to make transformation real.</p>
     <div class="hero-cta-row">
-      <button class="btn-primary">Find your path</button>
-      <button class="btn-ghost">Our approach</button>
+      <a class="btn-primary" href="#paths">Find your path</a>
+      <a class="btn-ghost" href="approach.html">Our approach</a>
     </div>
   </div>
   <div class="hero-right">
@@ -139,11 +144,11 @@
     </div>
   </div>
 </section>
-
-<section class="paths-section">
+ 
+<section class="paths-section" id="paths">
   <p class="section-label">Where do you need light?</p>
   <h2 class="section-heading">Two paths. One mission.</h2>
-  <p class="section-sub">Whether you lead an organisation navigating change, or you're a leader who knows humanised leadership matters — Lumina meets you where you are.</p>
+  <p class="section-sub">Whether you lead an organisation navigating change, or you're a leader who knows humanised leadership matters — let us shine a light on what's possible.</p>
   <div class="paths-grid">
     <div class="path-card">
       <span class="path-tag">For organisations</span>
@@ -152,7 +157,7 @@
       </div>
       <h3 class="path-name"><em>Lumina</em> Advisory</h3>
       <p class="path-desc">We help organisations close the adoption gap — the distance between what you intend and what actually changes. From diagnostic to transformation, we work alongside leadership teams to make change real.</p>
-      <a class="path-link" href="#">For organisations &rarr;</a>
+      <a class="path-link" href="advisory.html">For organisations &rarr;</a>
     </div>
     <div class="path-card">
       <span class="path-tag">For individuals</span>
@@ -160,43 +165,49 @@
         <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
       </div>
       <h3 class="path-name"><em>Lumina</em> Collective</h3>
-      <p class="path-desc">A space to find your inner light. Whether you're a leader who already leads with integrity and wants to change the world around you, or one who knows it's time to — Lumina meets you where you are.</p>
-      <a class="path-link" href="#">For individuals &rarr;</a>
+      <p class="path-desc">A space to find your inner light. Whether you're a leader who already leads with integrity and wants to change the world around you, or one who knows it's time to — Lumina is here to shine a light.</p>
+      <a class="path-link" href="collective.html">For individuals &rarr;</a>
     </div>
   </div>
 </section>
-
-<div class="framework-strip">
-  <div class="fw-item">
-    <div class="fw-number">01</div>
-    <div class="fw-label">Domain one</div>
-    <div class="fw-title">Mind</div>
-    <div class="fw-desc">Judgement, clarity and decision integrity under pressure</div>
+ 
+<div class="framework-section" id="framework">
+  <div class="framework-header">
+    <p class="framework-eyebrow">The Resistance Framework</p>
+    <h2 class="framework-title">Illuminating the Resistance</h2>
   </div>
-  <div class="fw-item">
-    <div class="fw-number">02</div>
-    <div class="fw-label">Domain two</div>
-    <div class="fw-title">Nervous system</div>
-    <div class="fw-desc">Resilience, regulation and emotional maturity</div>
-  </div>
-  <div class="fw-item">
-    <div class="fw-number">03</div>
-    <div class="fw-label">Domain three</div>
-    <div class="fw-title">Power</div>
-    <div class="fw-desc">Leadership behaviour, authority and psychological safety</div>
-  </div>
-  <div class="fw-item">
-    <div class="fw-number">04</div>
-    <div class="fw-label">Domain four</div>
-    <div class="fw-title">Structure</div>
-    <div class="fw-desc">Governance, culture and the systems that drive adoption</div>
+  <div class="framework-strip">
+    <div class="fw-item">
+      <div class="fw-number">01</div>
+      <div class="fw-label">Domain one</div>
+      <div class="fw-title">Systems &amp; Governance</div>
+      <div class="fw-desc">Where structural resistance hides</div>
+    </div>
+    <div class="fw-item">
+      <div class="fw-number">02</div>
+      <div class="fw-label">Domain two</div>
+      <div class="fw-title">Power &amp; Politics</div>
+      <div class="fw-desc">Where hierarchical resistance plays out</div>
+    </div>
+    <div class="fw-item">
+      <div class="fw-number">03</div>
+      <div class="fw-label">Domain three</div>
+      <div class="fw-title">Judgement &amp; Decision</div>
+      <div class="fw-desc">Where cognitive resistance operates</div>
+    </div>
+    <div class="fw-item">
+      <div class="fw-number">04</div>
+      <div class="fw-label">Domain four</div>
+      <div class="fw-title">Resilience &amp; Regulation</div>
+      <div class="fw-desc">Where human resistance shows up</div>
+    </div>
   </div>
 </div>
-
+ 
 <footer class="footer-bar">
-  <div class="footer-logo">lumi<span>na</span></div>
+  <a class="footer-logo" href="index.html">lumi<span>na</span></a>
   <div class="footer-tagline">Humanised transformation and change.</div>
 </footer>
-
+ 
 </body>
 </html>
