@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumina — Humanised Transformation and Change</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --forest: #004225;
+    --forest-deep: #002D19;
+    --gold: #C9A84C;
+    --cream: #F5F0E6;
+    --white: #FFFFFF;
+    --muted: #4A6655;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest-deep); min-height: 100vh; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--forest-deep); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); }
+  .logo span { font-style: italic; color: var(--gold); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul li a { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+  nav ul li a:hover { color: var(--white); }
+
+  /* HERO */
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; }
+  .hero-left { background: var(--forest); padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .hero-left::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.15); }
+  .hero-left::after { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.2); }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem; font-weight: 400; }
+  .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 300; line-height: 1.12; color: var(--white); margin-bottom: 2rem; position: relative; z-index: 1; }
+  .hero-headline em { font-style: italic; color: var(--gold); }
+  .hero-body { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 400px; margin-bottom: 3rem; font-weight: 300; position: relative; z-index: 1; }
+  .hero-cta-row { display: flex; gap: 1rem; align-items: center; position: relative; z-index: 1; }
+  .btn-primary { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; }
+  .hero-right { background: var(--cream); display: flex; align-items: center; justify-content: center; padding: 4rem 3rem; position: relative; }
+  .quote-ring { position: absolute; border-radius: 50%; border: 0.5px solid rgba(0,66,37,0.12); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .ring-1 { width: 260px; height: 260px; }
+  .ring-2 { width: 380px; height: 380px; }
+  .ring-3 { width: 500px; height: 500px; border-color: rgba(0,66,37,0.06); }
+  .hero-quote { position: relative; z-index: 2; text-align: center; max-width: 320px; }
+  .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 0.6; color: var(--gold); opacity: 0.4; margin-bottom: 0.5rem; display: block; }
+  .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--forest); }
+  .hero-quote cite { display: block; margin-top: 1.5rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-style: normal; font-family: 'DM Sans', sans-serif; }
+
+  /* PATHS */
+  .paths-section { padding: 6rem 3rem; text-align: center; background: var(--white); }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1rem; line-height: 1.2; }
+  .section-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 520px; margin: 0 auto 4rem; font-weight: 300; }
+  .paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 860px; margin: 0 auto; border: 0.5px solid rgba(0,66,37,0.15); }
+  .path-card { padding: 3rem 2.5rem; text-align: left; cursor: pointer; }
+  .path-card:first-child { border-right: 0.5px solid rgba(0,66,37,0.15); background: var(--forest); }
+  .path-card:last-child { background: var(--cream); }
+  .path-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.75rem; display: block; font-weight: 500; }
+  .path-card:first-child .path-tag { color: var(--gold); }
+  .path-card:last-child .path-tag { color: var(--muted); }
+  .path-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.75rem; }
+  .path-card:first-child .path-icon { border: 0.5px solid rgba(201,168,76,0.4); }
+  .path-card:last-child .path-icon { border: 0.5px solid rgba(0,66,37,0.3); }
+  .path-icon svg { width: 16px; height: 16px; fill: none; stroke-width: 1.2; }
+  .path-card:first-child .path-icon svg { stroke: var(--gold); }
+  .path-card:last-child .path-icon svg { stroke: var(--forest); }
+  .path-name { font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; font-weight: 300; margin-bottom: 1rem; line-height: 1.2; }
+  .path-card:first-child .path-name { color: var(--white); }
+  .path-card:last-child .path-name { color: var(--forest-deep); }
+  .path-name em { font-style: italic; }
+  .path-desc { font-size: 0.88rem; line-height: 1.8; margin-bottom: 2rem; font-weight: 300; }
+  .path-card:first-child .path-desc { color: rgba(255,255,255,0.6); }
+  .path-card:last-child .path-desc { color: var(--muted); }
+  .path-link { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding-bottom: 2px; font-weight: 400; }
+  .path-card:first-child .path-link { color: var(--gold); border-bottom: 0.5px solid var(--gold); }
+  .path-card:last-child .path-link { color: var(--forest); border-bottom: 0.5px solid var(--forest); }
+
+  /* FRAMEWORK */
+  .framework-strip { background: var(--forest-deep); padding: 4.5rem 3rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; border-top: 1px solid rgba(201,168,76,0.2); }
+  .fw-number { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 0.75rem; opacity: 0.6; }
+  .fw-label { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.6rem; font-weight: 400; }
+  .fw-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
+  .fw-desc { font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); font-weight: 300; }
+
+  /* FOOTER */
+  .footer-bar { padding: 2rem 3rem; background: var(--forest-deep); border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); }
+  .footer-logo span { font-style: italic; color: var(--gold); }
+  .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 300; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-headline { font-size: 2.6rem; }
+    .hero-right { min-height: 320px; }
+    .paths-section { padding: 3rem 1.5rem; }
+    .paths-grid { grid-template-columns: 1fr; }
+    .path-card:first-child { border-right: none; border-bottom: 0.5px solid rgba(201,168,76,0.2); }
+    .framework-strip { grid-template-columns: 1fr 1fr; padding: 3rem 1.5rem; }
+    .footer-bar { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">lumi<span>na</span></div>
+  <ul>
+    <li><a href="#">Our work</a></li>
+    <li><a href="#">For organisations</a></li>
+    <li><a href="#">For individuals</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Humanised transformation and change</p>
+    <h1 class="hero-headline">When people<br>transform,<br><em>the world<br>transforms</em><br>with them.</h1>
+    <p class="hero-body">Lumina exists to close the gap between intention and action — the adoption gap — by working with organisations and individuals to build the leadership clarity, decision integrity, and change readiness needed to make transformation real.</p>
+    <div class="hero-cta-row">
+      <button class="btn-primary">Find your path</button>
+      <button class="btn-ghost">Our approach</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="quote-ring ring-1"></div>
+    <div class="quote-ring ring-2"></div>
+    <div class="quote-ring ring-3"></div>
+    <div class="hero-quote">
+      <span class="quote-mark">"</span>
+      <p>Transform &amp; lead with integrity.</p>
+      <cite>Faye — Founder, Lumina</cite>
+    </div>
+  </div>
+</section>
+
+<section class="paths-section">
+  <p class="section-label">Where do you need light?</p>
+  <h2 class="section-heading">Two paths. One mission.</h2>
+  <p class="section-sub">Whether you lead an organisation navigating change, or you're a leader who knows humanised leadership matters — Lumina meets you where you are.</p>
+  <div class="paths-grid">
+    <div class="path-card">
+      <span class="path-tag">For organisations</span>
+      <div class="path-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <h3 class="path-name"><em>Lumina</em> Advisory</h3>
+      <p class="path-desc">We help organisations close the adoption gap — the distance between what you intend and what actually changes. From diagnostic to transformation, we work alongside leadership teams to make change real.</p>
+      <a class="path-link" href="#">For organisations &rarr;</a>
+    </div>
+    <div class="path-card">
+      <span class="path-tag">For individuals</span>
+      <div class="path-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <h3 class="path-name"><em>Lumina</em> Collective</h3>
+      <p class="path-desc">A space to find your inner light. Whether you're a leader who already leads with integrity and wants to change the world around you, or one who knows it's time to — Lumina meets you where you are.</p>
+      <a class="path-link" href="#">For individuals &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<div class="framework-strip">
+  <div class="fw-item">
+    <div class="fw-number">01</div>
+    <div class="fw-label">Domain one</div>
+    <div class="fw-title">Mind</div>
+    <div class="fw-desc">Judgement, clarity and decision integrity under pressure</div>
+  </div>
+  <div class="fw-item">
+    <div class="fw-number">02</div>
+    <div class="fw-label">Domain two</div>
+    <div class="fw-title">Nervous system</div>
+    <div class="fw-desc">Resilience, regulation and emotional maturity</div>
+  </div>
+  <div class="fw-item">
+    <div class="fw-number">03</div>
+    <div class="fw-label">Domain three</div>
+    <div class="fw-title">Power</div>
+    <div class="fw-desc">Leadership behaviour, authority and psychological safety</div>
+  </div>
+  <div class="fw-item">
+    <div class="fw-number">04</div>
+    <div class="fw-label">Domain four</div>
+    <div class="fw-title">Structure</div>
+    <div class="fw-desc">Governance, culture and the systems that drive adoption</div>
+  </div>
+</div>
+
+<footer class="footer-bar">
+  <div class="footer-logo">lumi<span>na</span></div>
+  <div class="footer-tagline">Humanised transformation and change.</div>
+</footer>
+
+</body>
+</html>
