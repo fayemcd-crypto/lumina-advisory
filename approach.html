@@ -16,9 +16,10 @@
     --muted: #4A6655;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest-deep); min-height: 100vh; }
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--forest-deep); }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
-  .logo span { font-style: italic; color: var(--gold); }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: var(--forest-deep); }
+  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); }
+  .logo-text span { font-style: italic; color: var(--gold); }
   nav ul { display: flex; gap: 2rem; list-style: none; }
   nav ul li a { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 400; transition: color 0.2s; }
   nav ul li a:hover { color: var(--white); }
@@ -78,8 +79,9 @@
   .btn-gold { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; margin: 0 0.5rem; position: relative; z-index: 1; }
   .btn-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; margin: 0 0.5rem; position: relative; z-index: 1; }
   .footer-bar { padding: 2rem 3rem; background: var(--forest-deep); border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
-  .footer-logo span { font-style: italic; color: var(--gold); }
+  .footer-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); }
+  .footer-logo-text span { font-style: italic; color: var(--gold); }
   .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 300; }
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -102,9 +104,26 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
-  <a class="logo" href="index.html">lumi<span>na</span></a>
+  <a class="logo" href="index.html">
+    <svg width="32" height="32" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="white" stop-opacity="1"/>
+          <stop offset="35%" stop-color="white" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="140" cy="140" rx="50" ry="50" fill="url(#glow)" opacity="0.6"/>
+      <polygon points="140,80 144,136 185,140 144,144 140,225 136,144 95,140 136,136" fill="white" opacity="0.95"/>
+      <polygon points="140,137 165,115 143,140 140,143" fill="white" opacity="0.85"/>
+      <polygon points="140,137 115,115 137,140 140,143" fill="white" opacity="0.85"/>
+      <polygon points="140,143 165,165 143,140 140,137" fill="white" opacity="0.85"/>
+      <polygon points="140,143 115,165 137,140 140,137" fill="white" opacity="0.85"/>
+    </svg>
+    <span class="logo-text">lumi<span>na</span></span>
+  </a>
   <ul>
     <li><a href="index.html#framework">Our work</a></li>
     <li><a href="approach.html">Our approach</a></li>
@@ -114,7 +133,7 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <section class="page-hero">
   <div class="page-hero-inner">
     <p class="page-eyebrow">Our approach</p>
@@ -122,7 +141,7 @@
     <p class="page-intro">Most organisations know what needs to change. They have the strategy, the budget, the consultants. What they don't have is a way through the resistance. That's where Lumina comes in.</p>
   </div>
 </section>
-
+ 
 <section class="adoption-section">
   <div class="adoption-inner">
     <div>
@@ -140,7 +159,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="fails-section">
   <div class="fails-inner">
     <p class="section-label">Why transformation fails</p>
@@ -161,7 +180,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="framework-section">
   <div class="framework-inner">
     <p class="framework-label">The Resistance Framework</p>
@@ -195,7 +214,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="how-section">
   <div class="how-inner">
     <p class="section-label">How we work</p>
@@ -219,18 +238,38 @@
     </div>
   </div>
 </section>
-
+ 
 <section class="approach-cta">
   <h2 class="cta-heading">Ready to illuminate<br><em>your resistance?</em></h2>
   <p class="cta-sub">Start with a conversation. We'll help you see where the resistance lives — and what it will take to move through it.</p>
   <a class="btn-gold" href="contact.html">Get in touch</a>
   <a class="btn-ghost" href="advisory.html">For organisations</a>
 </section>
-
+ 
 <footer class="footer-bar">
-  <a class="footer-logo" href="index.html">lumi<span>na</span></a>
+  <a class="footer-logo" href="index.html">
+    <svg width="24" height="24" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="white" stop-opacity="1"/>
+          <stop offset="35%" stop-color="white" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="140" cy="140" rx="50" ry="50" fill="url(#glow2)" opacity="0.6"/>
+      <polygon points="140,80 144,136 185,140 144,144 140,225 136,144 95,140 136,136" fill="white" opacity="0.95"/>
+      <polygon points="140,137 165,115 143,140 140,143" fill="white" opacity="0.85"/>
+      <polygon points="140,137 115,115 137,140 140,143" fill="white" opacity="0.85"/>
+      <polygon points="140,143 165,165 143,140 140,137" fill="white" opacity="0.85"/>
+      <polygon points="140,143 115,165 137,140 140,137" fill="white" opacity="0.85"/>
+    </svg>
+    <span class="footer-logo-text">lumi<span>na</span></span>
+  </a>
   <div class="footer-tagline">Humanised transformation and change.</div>
 </footer>
+ 
+</body>
+</html>
 
 </body>
 </html>
