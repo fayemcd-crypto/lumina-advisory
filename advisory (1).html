@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Organisations — Lumina Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --forest: #004225;
+    --forest-deep: #002D19;
+    --gold: #C9A84C;
+    --cream: #F5F0E6;
+    --white: #FFFFFF;
+    --muted: #4A6655;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest-deep); min-height: 100vh; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--forest-deep); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
+  .logo span { font-style: italic; color: var(--gold); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul li a { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+  nav ul li a:hover { color: var(--white); }
+  .page-hero { background: var(--forest); padding: 6rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.1); }
+  .page-hero::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 250px; height: 250px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.15); }
+  .page-hero-left { position: relative; z-index: 1; }
+  .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 400; }
+  .page-headline { font-family: 'Cormorant Garamond', serif; font-size: 3.4rem; font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 2rem; }
+  .page-headline em { font-style: italic; color: var(--gold); }
+  .page-intro { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 420px; margin-bottom: 2.5rem; }
+  .btn-gold { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; margin-right: 1rem; }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; }
+  .hero-right { position: relative; z-index: 1; }
+  .stat-card { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(201,168,76,0.2); padding: 2.5rem; margin-bottom: 1rem; }
+  .stat-card:last-child { margin-bottom: 0; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  .stat-text { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.55); font-weight: 300; }
+  .who-section { padding: 6rem 3rem; background: var(--white); }
+  .who-inner { max-width: 860px; margin: 0 auto; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1.5rem; line-height: 1.2; }
+  .section-heading em { font-style: italic; }
+  .section-body { font-size: 0.92rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: 1.5rem; max-width: 620px; }
+  .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .who-item { border-top: 2px solid var(--gold); padding-top: 1.5rem; }
+  .who-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.75rem; }
+  .who-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+  .what-section { padding: 6rem 3rem; background: var(--cream); }
+  .what-inner { max-width: 860px; margin: 0 auto; }
+  .what-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1rem; line-height: 1.2; }
+  .what-heading em { font-style: italic; }
+  .what-sub { font-size: 0.92rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: 3rem; max-width: 620px; }
+  .programme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 0.5px solid rgba(0,66,37,0.15); }
+  .programme-step { padding: 2.5rem; border-right: 0.5px solid rgba(0,66,37,0.15); background: var(--white); }
+  .programme-step:last-child { border-right: none; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; font-style: italic; color: var(--gold); opacity: 0.6; line-height: 1; margin-bottom: 1rem; }
+  .step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.5rem; }
+  .step-duration { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; font-weight: 400; }
+  .step-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+  .framework-ref { background: var(--forest-deep); padding: 5rem 3rem; }
+  .framework-ref-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .ref-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+  .ref-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--white); margin-bottom: 1.5rem; line-height: 1.2; font-style: italic; }
+  .ref-body { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.5); font-weight: 300; margin-bottom: 2rem; }
+  .ref-domains { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .ref-domain { border: 0.5px solid rgba(201,168,76,0.2); padding: 1.25rem; }
+  .ref-domain-num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; font-style: italic; color: var(--gold); opacity: 0.5; margin-bottom: 0.4rem; }
+  .ref-domain-title { font-size: 0.8rem; color: rgba(255,255,255,0.7); font-weight: 400; }
+  .btn-gold-sm { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.8rem 1.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; }
+  .expect-section { padding: 6rem 3rem; background: var(--white); }
+  .expect-inner { max-width: 860px; margin: 0 auto; }
+  .expect-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 3rem; line-height: 1.2; }
+  .expect-heading em { font-style: italic; }
+  .expect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .expect-item { padding: 2rem; background: var(--cream); border-left: 2px solid var(--gold); }
+  .expect-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.75rem; }
+  .expect-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+  .advisory-cta { background: var(--forest); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden; }
+  .advisory-cta::before { content: ''; position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.1); }
+  .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; position: relative; z-index: 1; }
+  .cta-heading em { font-style: italic; color: var(--gold); }
+  .cta-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; position: relative; z-index: 1; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .btn-cta-gold { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; margin: 0 0.5rem; position: relative; z-index: 1; }
+  .btn-cta-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; margin: 0 0.5rem; position: relative; z-index: 1; }
+  .footer-bar { padding: 2rem 3rem; background: var(--forest-deep); border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+  .footer-logo span { font-style: italic; color: var(--gold); }
+  .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 300; }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .page-hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .page-headline { font-size: 2.4rem; }
+    .hero-right { display: none; }
+    .who-section, .what-section, .expect-section { padding: 3rem 1.5rem; }
+    .who-grid { grid-template-columns: 1fr; }
+    .programme-grid { grid-template-columns: 1fr; }
+    .programme-step { border-right: none; border-bottom: 0.5px solid rgba(0,66,37,0.15); }
+    .programme-step:last-child { border-bottom: none; }
+    .framework-ref { padding: 3rem 1.5rem; }
+    .framework-ref-inner { grid-template-columns: 1fr; }
+    .expect-grid { grid-template-columns: 1fr; }
+    .advisory-cta { padding: 3rem 1.5rem; }
+    .footer-bar { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">lumi<span>na</span></a>
+  <ul>
+    <li><a href="index.html#framework">Our work</a></li>
+    <li><a href="approach.html">Our approach</a></li>
+    <li><a href="advisory.html">For organisations</a></li>
+    <li><a href="collective.html">For individuals</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-left">
+    <p class="page-eyebrow">Lumina Advisory</p>
+    <h1 class="page-headline">Your transformation<br>programme failed.<br><em>Here's what<br>nobody named.</em></h1>
+    <p class="page-intro">You had the strategy. The budget. The consultants. And still — the change never truly landed. The problem wasn't the plan. It was the resistance nobody addressed.</p>
+    <a class="btn-gold" href="contact.html">Start the conversation</a>
+    <a class="btn-ghost" href="approach.html">Our approach</a>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card">
+      <div class="stat-num">70%</div>
+      <div class="stat-text">of transformation programmes fail to meet their objectives — not because of poor strategy, but because of unaddressed human resistance.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">£900bn</div>
+      <div class="stat-text">lost globally each year to failed change initiatives. The Adoption Gap is not a small problem — and it's not going away.</div>
+    </div>
+  </div>
+</section>
+
+<section class="who-section">
+  <div class="who-inner">
+    <p class="section-label">Who we work with</p>
+    <h2 class="section-heading">For organisations <em>ready to name<br>what's really going on</em></h2>
+    <p class="section-body">Lumina Advisory is for organisations that know something isn't working — but haven't yet been able to name it, let alone address it. We work alongside leadership teams who are ready to look honestly at the resistance that's stopping transformation from landing.</p>
+    <div class="who-grid">
+      <div class="who-item">
+        <div class="who-title">Transformation that hasn't landed</div>
+        <div class="who-desc">You've invested in change — new strategy, new systems, new ways of working. But adoption is low, energy is drained and the old ways keep creeping back.</div>
+      </div>
+      <div class="who-item">
+        <div class="who-title">Leadership that feels stuck</div>
+        <div class="who-desc">Your leaders are capable but something is getting in the way — whether it's the culture, the dynamics between people, or the decisions being made at the top.</div>
+      </div>
+      <div class="who-item">
+        <div class="who-title">Culture that resists change</div>
+        <div class="who-desc">The culture wasn't built for transformation. The systems, incentives and unspoken rules all point in the wrong direction — and nobody is quite sure how to change that.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="what-section">
+  <div class="what-inner">
+    <p class="section-label">The transformation programme</p>
+    <h2 class="what-heading">From diagnostic<br><em>to transformation</em></h2>
+    <p class="what-sub">Lumina Advisory works in three stages — each one building on the last. We don't parachute in with answers. We work alongside your leadership team to illuminate the resistance and build the conditions for change to land.</p>
+    <div class="programme-grid">
+      <div class="programme-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Diagnose</div>
+        <span class="step-duration">2 — 4 weeks</span>
+        <div class="step-desc">We map the resistance across all four domains — the hidden architecture of your culture, the unspoken human dynamics, the distorted judgement at the top, and the emotional truth your people are carrying. You get a clear picture of what's actually stopping change from landing.</div>
+      </div>
+      <div class="programme-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Design</div>
+        <span class="step-duration">4 — 8 weeks</span>
+        <div class="step-desc">Working with your leadership team, we design the interventions that will move you through the resistance. From governance redesign to leadership development to cultural alignment — everything is tailored to what your diagnostic revealed.</div>
+      </div>
+      <div class="programme-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Transform</div>
+        <span class="step-duration">3 — 12 months</span>
+        <div class="step-desc">We work alongside you through implementation — coaching leaders, embedding new behaviours, realigning systems and measuring the adoption that proves transformation has truly landed. Not just on paper. In reality.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="framework-ref">
+  <div class="framework-ref-inner">
+    <div>
+      <p class="ref-label">Underpinned by</p>
+      <h2 class="ref-heading">The Resistance Framework</h2>
+      <p class="ref-body">Every Lumina Advisory engagement is built on the Resistance Framework — our proprietary approach to mapping and moving through the four domains where resistance lives in every organisation.</p>
+      <a class="btn-gold-sm" href="approach.html">Learn more about our approach</a>
+    </div>
+    <div class="ref-domains">
+      <div class="ref-domain">
+        <div class="ref-domain-num">01</div>
+        <div class="ref-domain-title">Hidden Architecture &amp; Systems</div>
+      </div>
+      <div class="ref-domain">
+        <div class="ref-domain-num">02</div>
+        <div class="ref-domain-title">Unspoken Human Dynamics</div>
+      </div>
+      <div class="ref-domain">
+        <div class="ref-domain-num">03</div>
+        <div class="ref-domain-title">The Distorted Lens</div>
+      </div>
+      <div class="ref-domain">
+        <div class="ref-domain-num">04</div>
+        <div class="ref-domain-title">The Emotional Truth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="expect-section">
+  <div class="expect-inner">
+    <p class="section-label">What to expect</p>
+    <h2 class="expect-heading">A different kind of<br><em>advisory relationship</em></h2>
+    <div class="expect-grid">
+      <div class="expect-item">
+        <div class="expect-title">We name what others won't</div>
+        <div class="expect-desc">We don't do comfortable. We work at the level of the real resistance — the politics, the ego, the culture, the emotions — because that's where transformation actually lives.</div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-title">We work alongside you</div>
+        <div class="expect-desc">We don't parachute in, deliver a deck and leave. We work as partners — embedded in your leadership conversations, present through the hard moments, accountable for adoption.</div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-title">We measure what matters</div>
+        <div class="expect-desc">Not just outputs but outcomes. Not just activity but adoption. We track the behavioural change that proves transformation has truly landed — not just been delivered.</div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-title">We build your capacity</div>
+        <div class="expect-desc">Our goal is never dependency. Every engagement builds the internal capability for your leaders to sustain transformation long after Lumina has left the room.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advisory-cta">
+  <h2 class="cta-heading">Ready to name<br><em>what's really going on?</em></h2>
+  <p class="cta-sub">Start with a conversation. No pitch, no pressure — just an honest look at where the resistance lives in your organisation and what it would take to move through it.</p>
+  <a class="btn-cta-gold" href="contact.html">Start the conversation</a>
+  <a class="btn-cta-ghost" href="approach.html">Our approach</a>
+</section>
+
+<footer class="footer-bar">
+  <a class="footer-logo" href="index.html">lumi<span>na</span></a>
+  <div class="footer-tagline">Humanised transformation and change.</div>
+</footer>
+
+</body>
+</html>
