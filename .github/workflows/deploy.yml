@@ -8,7 +8,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to VPS
-        run: |
-          sudo apt-get install -y sshpass
-          sshpass -p "${{ secrets.VPS_PASSWORD }}" ssh -o StrictHostKeyChecking=no root@178.104.70.62 "cd /var/www/lumina && git pull"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Copy files to Hetzner
+        uses: appleboy/scp-action@master
+        with:
+          host: 178.104.70.62
+          username: root
+          password: ${{ secrets.VPS_PASSWORD }}
+          source: "."
+          target: "/var/www/lumina"
