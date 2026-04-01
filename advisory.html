@@ -38,7 +38,9 @@
   .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
   .stat-text { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.55); font-weight: 300; }
   .stat-citation { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-top: 0.75rem; font-weight: 400; }
-  .stat-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 0.75rem; }
+  .stat-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.6; margin-top: 1.25rem; margin-bottom: 0.75rem; }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+  .stat-num--contrast { color: rgba(255,255,255,0.4); }
   .who-section { padding: 6rem 3rem; background: var(--white); }
   .who-inner { max-width: 860px; margin: 0 auto; }
   .section-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
@@ -136,10 +138,15 @@
       <div class="stat-num">70%</div>
       <div class="stat-text">of transformations fail</div>
       <div class="stat-citation">McKinsey, 2019</div>
-    </div>
-    <div class="stat-card stat-card--quote">
       <div class="stat-quote">&ldquo;A transformation&rsquo;s success or failure is rooted in human emotions&rdquo;</div>
       <div class="stat-citation">Raj Sharma, EY, 2023</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-text stat-label">The Adoption Gap</div>
+      <div class="stat-num">74%</div>
+      <div class="stat-text">of leaders believe they&rsquo;re bringing people with them.</div>
+      <div class="stat-num stat-num--contrast">42%</div>
+      <div class="stat-text">of employees agree.</div>
     </div>
   </div>
 </section>
