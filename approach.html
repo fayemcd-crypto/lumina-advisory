@@ -27,8 +27,8 @@
   .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.1); }
   .page-hero::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 250px; height: 250px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.15); }
   .page-hero-inner { max-width: 680px; position: relative; z-index: 1; }
-  .page-hero-logo { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); z-index: 1; }
-  .page-hero-logo img { width: 280px; height: 280px; object-fit: contain; mix-blend-mode: screen; }
+  .page-hero-logo { position: absolute; left: calc(680px + 6rem); right: 3rem; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; z-index: 1; }
+  .page-hero-logo img { width: 300px; height: 300px; object-fit: contain; }
   .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 400; }
   .page-headline { font-family: 'Cormorant Garamond', serif; font-size: 3.4rem; font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 2rem; }
   .page-headline em { font-style: italic; color: var(--gold); }
