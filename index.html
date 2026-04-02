@@ -42,10 +42,12 @@
   .ring-1 { width: 260px; height: 260px; }
   .ring-2 { width: 380px; height: 380px; }
   .ring-3 { width: 500px; height: 500px; border-color: rgba(0,66,37,0.06); }
-  .hero-quote { position: relative; z-index: 2; text-align: center; max-width: 320px; }
-  .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 0.6; color: var(--gold); opacity: 0.4; margin-bottom: 0.5rem; display: block; }
-  .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--forest); }
-  .hero-quote cite { display: block; margin-top: 1.5rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-style: normal; font-family: 'DM Sans', sans-serif; }
+  .hero-quote { position: relative; z-index: 2; text-align: center; max-width: 340px; }
+  .quote-mark { display: none; }
+  .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 300; font-style: italic; line-height: 1.75; color: var(--forest); }
+  .hero-quote p::before { content: '\201C'; font-size: 3rem; line-height: 0; vertical-align: -0.6rem; color: var(--gold); opacity: 0.5; margin-right: 0.1rem; }
+  .hero-quote p::after { content: '\201D'; font-size: 3rem; line-height: 0; vertical-align: -0.6rem; color: var(--gold); opacity: 0.5; margin-left: 0.1rem; }
+  .hero-quote cite { display: block; margin-top: 1.5rem; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-style: normal; font-family: 'DM Sans', sans-serif; }
  
   /* PATHS */
   .paths-section { padding: 6rem 3rem; text-align: center; background: var(--white); scroll-margin-top: 80px; }
@@ -138,9 +140,7 @@
     <div class="quote-ring ring-2"></div>
     <div class="quote-ring ring-3"></div>
     <div class="hero-quote">
-      <span class="quote-mark">"</span>
       <p>Lead &amp; transform with integrity. Seek the truth. Reclaim the light.</p>
-       <span class="quote-mark">"</span>
     </div>
   </div>
 </section>
