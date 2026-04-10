@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lumina Collective — For Individuals</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --forest: #004225;
+    --forest-deep: #002D19;
+    --gold: #C9A84C;
+    --cream: #F5F0E6;
+    --white: #FFFFFF;
+    --muted: #4A6655;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest-deep); min-height: 100vh; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: var(--forest-deep); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
+  .logo span { font-style: italic; color: var(--gold); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul li a { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+  nav ul li a:hover { color: var(--white); }
+
+  /* HERO */
+  .page-hero { background: var(--forest); padding: 6rem max(3rem, calc((100% - 860px) / 2)); position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.1); }
+  .page-hero::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 250px; height: 250px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.15); }
+  .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 400; }
+  .page-headline { font-family: 'Cormorant Garamond', serif; font-size: 3.4rem; font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 2rem; max-width: 700px; position: relative; z-index: 1; }
+  .page-headline em { font-style: italic; color: var(--gold); }
+  .page-intro { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 580px; margin-bottom: 1.25rem; position: relative; z-index: 1; }
+  .founder-block { border-left: 2px solid rgba(201,168,76,0.5); padding-left: 1.5rem; margin: 2.5rem 0 0; max-width: 580px; position: relative; z-index: 1; }
+  .founder-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 0.75rem; }
+  .founder-name { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(201,168,76,0.6); font-weight: 400; }
+
+  /* SECTIONS */
+  .content-section { padding: 5rem max(3rem, calc((100% - 860px) / 2)); }
+  .content-section--white { background: var(--white); }
+  .content-section--cream { background: var(--cream); }
+  .content-section--dark { background: var(--forest-deep); }
+  .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1.25rem; line-height: 1.2; }
+  .section-heading--light { color: var(--white); }
+  .section-heading em { font-style: italic; }
+  .section-body { font-size: 0.92rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: 1.25rem; max-width: 680px; }
+  .section-body--light { color: rgba(255,255,255,0.6); }
+  .divider { border: none; border-top: 0.5px solid rgba(0,66,37,0.12); margin: 0; }
+
+  /* RECOGNITION LIST */
+  .recognition-list { list-style: none; margin: 1.5rem 0 2rem; }
+  .recognition-list li { font-size: 0.92rem; line-height: 1.75; color: var(--muted); padding: 0.4rem 0 0.4rem 1.75rem; position: relative; font-weight: 300; }
+  .recognition-list li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .stat-card { background: var(--cream); padding: 1.5rem; border: 0.5px solid rgba(0,66,37,0.1); }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; font-style: italic; color: var(--forest); line-height: 1; margin-bottom: 0.5rem; }
+  .stat-desc { font-size: 0.85rem; line-height: 1.6; color: var(--muted); font-weight: 300; }
+  .stat-source { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-top: 0.5rem; font-weight: 400; }
+
+  /* PIVOT LINE */
+  .pivot-line { border-left: 2px solid rgba(201,168,76,0.5); padding-left: 1.5rem; margin: 2.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--forest-deep); line-height: 1.6; max-width: 600px; }
+
+  /* WORLD STATS */
+  .world-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .world-stat { background: var(--white); border: 0.5px solid rgba(0,66,37,0.1); padding: 1.5rem; }
+  .world-stat-label { font-size: 0.68rem; font-weight: 400; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.14em; }
+  .world-stat-text { font-size: 0.88rem; line-height: 1.65; color: var(--muted); font-weight: 300; }
+  .world-stat-source { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(201,168,76,0.5); margin-top: 0.5rem; font-weight: 400; }
+
+  /* PATH CARDS */
+  .path-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .path-card { background: var(--white); border: 0.5px solid rgba(0,66,37,0.12); padding: 2rem; }
+  .path-num { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .path-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.25rem; }
+  .path-focus { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 400; }
+  .path-body { font-size: 0.88rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+
+  /* MISSION BAND */
+  .mission-band { background: var(--cream); border: 0.5px solid rgba(0,66,37,0.1); padding: 2.5rem; margin-top: 2rem; }
+  .mission-band-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.75rem; }
+  .mission-band p { font-size: 0.88rem; line-height: 1.75; color: var(--muted); font-weight: 300; }
+  .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .mission-label { font-size: 0.78rem; font-weight: 500; color: var(--forest-deep); margin-bottom: 0.4rem; letter-spacing: 0.04em; }
+  .mission-text { font-size: 0.85rem; line-height: 1.65; color: var(--muted); font-weight: 300; }
+
+  /* CTA */
+  .cta-section { background: var(--forest); padding: 5rem max(3rem, calc((100% - 860px) / 2)); text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.08); }
+  .cta-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; position: relative; z-index: 1; }
+  .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; line-height: 1.2; position: relative; z-index: 1; }
+  .cta-sub { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 480px; margin: 0 auto 3rem; font-weight: 300; position: relative; z-index: 1; }
+  .cta-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+  .cta-box { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(201,168,76,0.25); padding: 2rem; text-align: left; }
+  .cta-box-label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; font-weight: 400; }
+  .cta-box-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--white); margin-bottom: 0.75rem; }
+  .cta-box-body { font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; font-weight: 300; }
+  .btn-gold { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.65); border: 0.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; }
+
+  /* FOOTER */
+  .footer-bar { padding: 2rem 3rem; background: var(--forest-deep); border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+  .footer-logo span { font-style: italic; color: var(--gold); }
+  .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 300; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .page-headline { font-size: 2.4rem; }
+    .content-section { padding: 3rem 1.5rem; }
+    .cta-section { padding: 4rem 1.5rem; }
+    .footer-bar { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">lumi<span>na</span></a>
+  <ul>
+    <li><a href="index.html#framework">Our work</a></li>
+    <li><a href="approach.html">Our approach</a></li>
+    <li><a href="advisory.html">For organisations</a></li>
+    <li><a href="collective.html">For individuals</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <p class="page-eyebrow">The Lumina Collective</p>
+  <h1 class="page-headline">I believe there is a way<br>to change the world.<br><em>It starts with how we<br>choose our leaders.</em></h1>
+  <p class="page-intro">I spent years helping organisations make better decisions with data. The data was never the problem. It was judgement. Leadership. Culture.</p>
+  <p class="page-intro">Lumina exists to illuminate what's been kept in the dark, strengthen the light within, and empower people to lead from integrity.</p>
+  <div class="founder-block">
+    <p class="founder-text">The future belongs to the truth seekers — people with the clarity to see through the noise and the courage to act on it. Because a life well-lived shouldn't be kept in the dark.</p>
+    <p class="founder-name">— Faye, Founder of Lumina</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section content-section--white">
+  <p class="section-eyebrow">The problem — your workplace</p>
+  <h2 class="section-heading">The working world is keeping<br>people <em>in the dark.</em></h2>
+  <p class="section-body">Toxic workplaces don't always look the way you'd expect. Sometimes it's not cruelty — it's the slow erosion of your confidence. The decisions made without you. The version of yourself you bring to work getting smaller and smaller.</p>
+  <ul class="recognition-list">
+    <li>You know something is wrong but can't find the words for it</li>
+    <li>You're making decisions from fear, not from clarity</li>
+    <li>You've started leading in ways that don't feel like you</li>
+    <li>You want to reclaim who you are — but don't know where to start</li>
+  </ul>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-number">46%</div>
+      <div class="stat-desc">of UK workers have experienced a toxic workplace</div>
+      <div class="stat-source">Pearn Kandola, 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">76%</div>
+      <div class="stat-desc">have left a job because of toxic culture</div>
+      <div class="stat-source">HR Magazine, 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">55%</div>
+      <div class="stat-desc">say the emotional damage lasted up to two years</div>
+      <div class="stat-source">Culture Shift</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">964k</div>
+      <div class="stat-desc">workers reported work-related stress, depression or anxiety in 2024/25 — 40.1 million lost working days</div>
+      <div class="stat-source">HSE, 2024/25</div>
+    </div>
+  </div>
+  <div class="pivot-line">This isn't just a workplace problem. It's a leadership problem. And it's playing out everywhere.</div>
+
+  <p class="section-eyebrow" style="margin-top: 3rem;">The problem — the world</p>
+  <p class="section-body">When leadership fails at scale — in boardrooms, in governments, in institutions — the consequences don't stay contained. They ripple outward into economies, into communities, into people's mental health and futures.</p>
+  <div class="world-stat-grid">
+    <div class="world-stat">
+      <div class="world-stat-label">Trust in crisis</div>
+      <div class="world-stat-text">More people now distrust their national governments than trust them — across OECD countries.</div>
+      <div class="world-stat-source">OECD, 2024</div>
+    </div>
+    <div class="world-stat">
+      <div class="world-stat-label">Democracy in retreat</div>
+      <div class="world-stat-text">Autocracies now outnumber democracies — 92 to 87. 25 years of democratic progress erased in a decade.</div>
+      <div class="world-stat-source">V-Dem Institute, 2026</div>
+    </div>
+    <div class="world-stat">
+      <div class="world-stat-label">Economic harm</div>
+      <div class="world-stat-text">Over a quarter of the world's nations are under populist leadership — linked to 10% lower GDP per capita over 15 years.</div>
+      <div class="world-stat-source">Allianz, 2024</div>
+    </div>
+    <div class="world-stat">
+      <div class="world-stat-label">Mental health toll</div>
+      <div class="world-stat-text">The UN links leadership choices directly to the global mental health crisis — fuelling anxiety, depression and economic instability worldwide.</div>
+      <div class="world-stat-source">UN Special Rapporteur, 2024</div>
+    </div>
+  </div>
+  <div class="pivot-line">The future belongs to the truth seekers. People with the clarity to see through the noise and the courage to act on it. This is why Lumina exists.</div>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section content-section--cream">
+  <p class="section-eyebrow">The Collective — for individuals</p>
+  <h2 class="section-heading">Find your inner light.<br><em>Shape a life well lived.</em></h2>
+  <p class="section-body">A life well-lived shouldn't be kept in the dark. The Collective is a structured environment for people ready to stop operating from fear — and start leading with empowerment, resilience, and kindness.</p>
+  <div class="path-grid">
+    <div class="path-card">
+      <p class="path-num">01 — 1:1 Coaching</p>
+      <p class="path-name">The Safe Space</p>
+      <p class="path-focus">Nervous system &amp; mind</p>
+      <p class="path-body">When you're kept in the dark, you often need to seek the truth of your own situation privately first. This is your space to do that — confidential, honest, and focused on moving you out of survival mode.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-num">02 — Group Coaching</p>
+      <p class="path-name">The Cohort</p>
+      <p class="path-focus">Power &amp; systems</p>
+      <p class="path-body">Isolation feeds fear. In a small group of 4–6, you'll see your situation reflected in others — and stop experiencing it as personal failure. This is where you learn to navigate power and lead differently.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-num">03 — Community</p>
+      <p class="path-name">The Collective</p>
+      <p class="path-focus">Purpose &amp; belonging</p>
+      <p class="path-body">Transformation needs a culture to survive. The Collective is your long-term home — a community that ensures you don't slide back into the old, dark cycles once the coaching ends.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="content-section content-section--white">
+  <p class="section-eyebrow">The bigger picture</p>
+  <h2 class="section-heading">Raising the next generation<br><em>of leaders.</em></h2>
+  <p class="section-body">The leadership crisis won't be solved from the top down. Real change happens when communities find and grow their own leaders from within — when the people closest to the problem become the ones who solve it.</p>
+  <div class="mission-band">
+    <p class="mission-band-heading">Community leadership model</p>
+    <p>Lumina reaches beyond the Collective — into schools, grassroots organisations, and communities that have never had access to this kind of development. We don't deliver leadership to communities. We create the conditions for communities to lead themselves.</p>
+    <div class="mission-grid">
+      <div>
+        <p class="mission-label">Future leaders programme</p>
+        <p class="mission-text">Development for young people who aren't yet in the room — but deserve to be.</p>
+      </div>
+      <div>
+        <p class="mission-label">Community voice</p>
+        <p class="mission-text">Supporting grassroots communities to organise, advocate, and lead their own futures.</p>
+      </div>
+      <div>
+        <p class="mission-label">Access &amp; inclusion</p>
+        <p class="mission-text">Subsidised and pro bono places — because this work should reach everyone who needs it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <p class="cta-eyebrow">Ready to seek the truth?</p>
+  <h2 class="cta-heading">Join the cause.</h2>
+  <p class="cta-sub">Whether you need support finding your way through — or you're ready to help others find theirs — there's a place for you here.</p>
+  <div class="cta-split">
+    <div class="cta-box">
+      <p class="cta-box-label">For you</p>
+      <p class="cta-box-title">Get support</p>
+      <p class="cta-box-body">Start your journey with 1:1 coaching, join a cohort, or find your people in the Collective community. The first step is always the same — reach out.</p>
+      <a href="contact.html" class="btn-gold">Get in touch</a>
+    </div>
+    <div class="cta-box">
+      <p class="cta-box-label">For the world</p>
+      <p class="cta-box-title">Support the community</p>
+      <p class="cta-box-body">Help us bring this work to the people who need it most. Volunteer, partner, or donate to the community leadership model.</p>
+      <a href="contact.html" class="btn-ghost">Get involved</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-bar">
+  <a class="footer-logo" href="index.html">lumi<span>na</span></a>
+  <div class="footer-tagline">Humanised transformation and change.</div>
+</footer>
+
+</body>
+</html>
