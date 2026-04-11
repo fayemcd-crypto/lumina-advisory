@@ -59,6 +59,8 @@
   .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; font-style: italic; color: var(--forest); line-height: 1; margin-bottom: 0.5rem; }
   .stat-desc { font-size: 0.85rem; line-height: 1.6; color: var(--muted); font-weight: 300; }
   .stat-source { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-top: 0.5rem; font-weight: 400; }
+  .stat-grid--two-col { grid-template-columns: repeat(2, 1fr); }
+  .stat-label-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; color: var(--forest); line-height: 1; margin-bottom: 0.5rem; }
 
   /* PIVOT LINE */
   .pivot-line { border-left: 2px solid rgba(201,168,76,0.5); padding-left: 1.5rem; margin: 2.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--forest-deep); line-height: 1.6; max-width: 600px; }
@@ -144,59 +146,27 @@
 <div class="divider"></div>
 
 <section class="content-section content-section--white">
-  <h2 class="section-heading">The working world is keeping<br>people <em>in the dark.</em></h2>
-  <p class="section-body">Toxic workplaces don't always look the way you'd expect. Sometimes it's not cruelty — it's the slow erosion of your confidence. The decisions made without you. The version of yourself you bring to work getting smaller and smaller.</p>
-  <ul class="recognition-list">
-    <li>You know something is wrong but can't find the words for it</li>
-    <li>You're making decisions from fear, not from clarity</li>
-    <li>You've started leading in ways that don't feel like you</li>
-    <li>You want to reclaim who you are — but don't know where to start</li>
-  </ul>
-  <div class="stat-grid">
+  <p class="section-body">In boardrooms and governments, in institutions and workplaces, in societies and in our lives, the systems we built are failing us. And we can feel it.</p>
+  <div class="stat-grid stat-grid--two-col">
     <div class="stat-card">
       <div class="stat-number">46%</div>
       <div class="stat-desc">of UK workers have experienced a toxic workplace</div>
       <div class="stat-source">Pearn Kandola, 2025</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">76%</div>
-      <div class="stat-desc">have left a job because of toxic culture</div>
-      <div class="stat-source">HR Magazine, 2025</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">55%</div>
-      <div class="stat-desc">say the emotional damage lasted up to two years</div>
-      <div class="stat-source">Culture Shift</div>
-    </div>
-    <div class="stat-card">
       <div class="stat-number">964k</div>
-      <div class="stat-desc">workers reported work-related stress, depression or anxiety in 2024/25 — 40.1 million lost working days</div>
+      <div class="stat-desc">workers reported work-related stress, depression or anxiety — 40.1 million lost working days</div>
       <div class="stat-source">HSE, 2024/25</div>
     </div>
-  </div>
-  <div class="pivot-line">This isn't just a workplace problem. It's a leadership problem. And it's playing out everywhere.</div>
-
-  <p class="section-body">When leadership fails at scale — in boardrooms, in governments, in institutions — the consequences don't stay contained. They ripple outward into economies, into communities, into people's mental health and futures.</p>
-  <div class="world-stat-grid">
-    <div class="world-stat">
-      <div class="world-stat-label">Trust in crisis</div>
-      <div class="world-stat-text">More people now distrust their national governments than trust them — across OECD countries.</div>
-      <div class="world-stat-source">OECD, 2024</div>
+    <div class="stat-card stat-card--label">
+      <div class="stat-label-heading">Trust in crisis</div>
+      <div class="stat-desc">More people now distrust their national governments than trust them — across OECD countries.</div>
+      <div class="stat-source">OECD, 2024</div>
     </div>
-    <div class="world-stat">
-      <div class="world-stat-label">Democracy in retreat</div>
-      <div class="world-stat-text">Autocracies now outnumber democracies — 92 to 87. 25 years of democratic progress erased in a decade.</div>
-      <div class="world-stat-source">V-Dem Institute, 2026</div>
-    </div>
-    <div class="world-stat">
-      <div class="world-stat-label">Economic harm</div>
-      <div class="world-stat-text">Over a quarter of the world's nations are under populist leadership — linked to 10% lower GDP per capita over 15 years.</div>
-      <div class="world-stat-source">Allianz, 2024</div>
-    </div>
-    <div class="world-stat">
-      <div class="world-stat-label">Mental health toll</div>
-      <div class="world-stat-text">The UN links leadership choices directly to the global mental health crisis — fuelling anxiety, depression and economic instability worldwide.</div>
-      <div class="world-stat-source">UN Special Rapporteur, 2024</div>
+    <div class="stat-card stat-card--label">
+      <div class="stat-label-heading">Mental health toll</div>
+      <div class="stat-desc">The UN links leadership choices directly to the global mental health crisis — fuelling anxiety, depression and economic instability worldwide.</div>
+      <div class="stat-source">UN Special Rapporteur, 2024</div>
     </div>
   </div>
   <div class="pivot-line">The future belongs to the truth seekers. People with the clarity to see through the noise and the courage to act on it. This is why Lumina exists.</div>
