@@ -64,16 +64,18 @@
   .step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.5rem; }
   .step-duration { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; font-weight: 400; }
   .step-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
-  .framework-ref { background: var(--forest-deep); padding: 5rem 3rem; }
-  .framework-ref-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .ref-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
-  .ref-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--white); margin-bottom: 1.5rem; line-height: 1.2; font-style: italic; }
-  .ref-body { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.5); font-weight: 300; margin-bottom: 2rem; }
+  .framework-ref { background: var(--cream); padding: 5rem 3rem; }
+  .framework-ref-inner { max-width: 860px; margin: 0 auto; }
+  .ref-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 400; }
+  .ref-heading { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; color: var(--forest-deep); margin-bottom: 2rem; line-height: 1.15; }
+  .ref-heading em { font-style: italic; font-weight: 300; }
+  .ref-pullquote { border-left: 2px solid rgba(0,66,37,0.15); background: var(--white); padding: 1.75rem 2rem; margin-bottom: 1.75rem; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.7; color: var(--forest-deep); font-weight: 300; }
+  .ref-body { font-size: 0.9rem; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
+  .ref-divider { border: none; border-top: 0.5px solid rgba(0,66,37,0.15); margin-bottom: 2rem; }
   .ref-domains { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .ref-domain { border: 0.5px solid rgba(201,168,76,0.2); padding: 1.25rem; }
-  .ref-domain-num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; font-style: italic; color: var(--gold); opacity: 0.5; margin-bottom: 0.4rem; }
-  .ref-domain-title { font-size: 0.8rem; color: rgba(255,255,255,0.7); font-weight: 400; }
-  .btn-gold-sm { background: var(--gold); color: var(--forest-deep); border: none; padding: 0.8rem 1.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; }
+  .ref-domain { background: var(--white); border: 0.5px solid rgba(0,66,37,0.1); border-radius: 6px; padding: 1.5rem 1.5rem 1.75rem; }
+  .ref-domain-num { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-bottom: 0.6rem; }
+  .ref-domain-title { font-size: 0.95rem; color: var(--forest-deep); font-weight: 500; }
   .expect-section { padding: 6rem 3rem; background: var(--white); }
   .expect-inner { max-width: 860px; margin: 0 auto; }
   .expect-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 3rem; line-height: 1.2; }
@@ -105,7 +107,7 @@
     .programme-step { border-right: none; border-bottom: 0.5px solid rgba(0,66,37,0.15); }
     .programme-step:last-child { border-bottom: none; }
     .framework-ref { padding: 3rem 1.5rem; }
-    .framework-ref-inner { grid-template-columns: 1fr; }
+    .ref-domains { grid-template-columns: 1fr; }
     .expect-grid { grid-template-columns: 1fr; }
     .advisory-cta { padding: 3rem 1.5rem; }
     .footer-bar { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
@@ -207,28 +209,27 @@
 
 <section class="framework-ref">
   <div class="framework-ref-inner">
-    <div>
-      <p class="ref-label">Underpinned by</p>
-      <h2 class="ref-heading">The Resistance Framework</h2>
-      <p class="ref-body">Every Lumina Advisory engagement is built on the Resistance Framework — our approach to mapping and moving through the four domains where resistance needs to be illuminated.</p>
-      <a class="btn-gold-sm" href="approach.html">Learn more about our approach</a>
-    </div>
+    <p class="ref-label">Underpinned by</p>
+    <h2 class="ref-heading">The Resistance <em>Framework</em></h2>
+    <blockquote class="ref-pullquote">Cultures are shaped by only two processes — the quality of our interactions, and the integrity of our decisions. Lumina works at exactly those two points.</blockquote>
+    <p class="ref-body">Every Lumina Advisory engagement is built on the Resistance Framework — our approach to mapping and moving through the four domains where resistance needs to be illuminated.</p>
+    <hr class="ref-divider">
     <div class="ref-domains">
       <div class="ref-domain">
         <div class="ref-domain-num">01</div>
-        <div class="ref-domain-title">Hidden Architecture &amp; Systems</div>
+        <div class="ref-domain-title">Hidden architecture &amp; systems</div>
       </div>
       <div class="ref-domain">
         <div class="ref-domain-num">02</div>
-        <div class="ref-domain-title">The Unspoken Human Dynamics</div>
+        <div class="ref-domain-title">The unspoken human dynamics</div>
       </div>
       <div class="ref-domain">
         <div class="ref-domain-num">03</div>
-        <div class="ref-domain-title">The Distorted Lens</div>
+        <div class="ref-domain-title">The distorted lens</div>
       </div>
       <div class="ref-domain">
         <div class="ref-domain-num">04</div>
-        <div class="ref-domain-title">The Obscured Emotional Truth</div>
+        <div class="ref-domain-title">The obscured emotional truth</div>
       </div>
     </div>
   </div>
