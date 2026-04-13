@@ -87,6 +87,16 @@
   .expect-item { padding: 2rem; background: var(--cream); border-left: 2px solid var(--gold); }
   .expect-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 0.75rem; }
   .expect-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+  .collective-crossover { background: var(--cream); padding: 5rem 3rem; border-top: 0.5px solid rgba(0,66,37,0.1); }
+  .crossover-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .crossover-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 400; }
+  .crossover-heading { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 1.25rem; line-height: 1.2; }
+  .crossover-heading em { font-style: italic; }
+  .crossover-body { font-size: 0.88rem; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
+  .crossover-right { border-left: 0.5px solid rgba(0,66,37,0.15); padding-left: 3rem; }
+  .crossover-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; font-style: italic; color: var(--forest-deep); line-height: 1.7; margin-bottom: 1rem; }
+  .btn-crossover { background: transparent; color: var(--forest); border: 0.5px solid rgba(0,66,37,0.4); padding: 0.8rem 1.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; transition: background 0.2s, color 0.2s; }
+  .btn-crossover:hover { background: var(--forest); color: var(--white); }
   .advisory-cta { background: var(--forest); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden; }
   .advisory-cta::before { content: ''; position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(201,168,76,0.1); }
   .cta-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; position: relative; z-index: 1; }
@@ -112,6 +122,9 @@
     .framework-ref { padding: 3rem 1.5rem; }
     .ref-domains { grid-template-columns: 1fr; }
     .expect-grid { grid-template-columns: 1fr; }
+    .collective-crossover { padding: 3rem 1.5rem; }
+    .crossover-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .crossover-right { border-left: none; padding-left: 0; border-top: 0.5px solid rgba(0,66,37,0.15); padding-top: 2rem; }
     .advisory-cta { padding: 3rem 1.5rem; }
     .footer-bar { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
   }
@@ -263,6 +276,20 @@
         <div class="expect-title">We help people to reclaim their light</div>
         <div class="expect-desc">We create the right conditions, build the capability, and trust every person to reclaim the leader within them.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="collective-crossover">
+  <div class="crossover-inner">
+    <div>
+      <p class="crossover-label">For individuals</p>
+      <h2 class="crossover-heading">Transformation begins<br>with the <em>individual.</em></h2>
+      <p class="crossover-body">Organisations change when leaders do. The Lumina Collective exists for the individuals inside them — people ready to stop operating from fear and start leading with empowerment, resilience, and integrity.</p>
+      <a class="btn-crossover" href="collective.html">Explore the Collective</a>
+    </div>
+    <div class="crossover-right">
+      <p class="crossover-quote">"Lumina exists to illuminate what's been kept in the dark, strengthen the light within, and empower people to lead from integrity."</p>
     </div>
   </div>
 </section>
