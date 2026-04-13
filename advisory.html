@@ -73,9 +73,11 @@
   .ref-body { font-size: 0.9rem; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
   .ref-divider { border: none; border-top: 0.5px solid rgba(0,66,37,0.15); margin-bottom: 2rem; }
   .ref-domains { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .ref-domain { background: var(--white); border: 0.5px solid rgba(0,66,37,0.1); border-radius: 6px; padding: 1.5rem 1.5rem 1.75rem; }
+  .ref-domain { background: var(--white); border: 0.5px solid rgba(0,66,37,0.1); border-radius: 6px; padding: 1.5rem 1.5rem 1.75rem; text-decoration: none; display: block; transition: border-color 0.2s, box-shadow 0.2s; }
+  .ref-domain:hover { border-color: rgba(0,66,37,0.3); box-shadow: 0 2px 12px rgba(0,66,37,0.08); }
   .ref-domain-num { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-bottom: 0.6rem; }
-  .ref-domain-title { font-size: 0.95rem; color: var(--forest-deep); font-weight: 500; }
+  .ref-domain-title { font-size: 0.95rem; color: var(--forest-deep); font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .ref-domain-title::after { content: '→'; font-size: 0.85rem; color: var(--gold); opacity: 0.7; }
   .expect-section { padding: 6rem 3rem; background: var(--white); }
   .expect-inner { max-width: 860px; margin: 0 auto; }
   .expect-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--forest-deep); margin-bottom: 3rem; line-height: 1.2; }
@@ -215,22 +217,22 @@
     <p class="ref-body">Every Lumina Advisory engagement is built on the Resistance Framework — our approach to mapping and moving through the four domains where resistance needs to be illuminated.</p>
     <hr class="ref-divider">
     <div class="ref-domains">
-      <div class="ref-domain">
+      <a class="ref-domain" href="approach.html">
         <div class="ref-domain-num">01</div>
         <div class="ref-domain-title">Hidden Architecture &amp; Systems</div>
-      </div>
-      <div class="ref-domain">
+      </a>
+      <a class="ref-domain" href="approach.html">
         <div class="ref-domain-num">02</div>
         <div class="ref-domain-title">The Unspoken Human Dynamics</div>
-      </div>
-      <div class="ref-domain">
+      </a>
+      <a class="ref-domain" href="approach.html">
         <div class="ref-domain-num">03</div>
         <div class="ref-domain-title">The Distorted Lens</div>
-      </div>
-      <div class="ref-domain">
+      </a>
+      <a class="ref-domain" href="approach.html">
         <div class="ref-domain-num">04</div>
         <div class="ref-domain-title">The Obscured Emotional Truth</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
